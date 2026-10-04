@@ -7,7 +7,7 @@
     "build": "next build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test:logic": "node --experimental-strip-types tests/occurrences.test.mjs && node --experimental-strip-types tests/motion-preferences.test.mjs",
+    "test:logic": "node --experimental-strip-types tests/occurrences.test.mjs && node --experimental-strip-types tests/motion-preferences.test.mjs && node --experimental-strip-types tests/calendar.test.mjs",
     "prepare-brand": "node scripts/prepare-brand.mjs",
     "optimize-images": "node scripts/optimize-images.mjs"
   },
