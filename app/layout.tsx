@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { OrganizationJsonLd } from "@/components/site/OrganizationJsonLd";
 import { site } from "@/content/site";
 import "./globals.css";
+import "@/styles/inner-pages.css";
 
 const displayFont = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 const editorialFont = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-editorial", display: "swap" });

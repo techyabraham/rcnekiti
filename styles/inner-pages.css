@@ -1,0 +1,54 @@
+/* Photographic inner-page openings, in the same palette as the home hero. */
+.inner-page .page-intro--photographic {
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(90px, 10vw, 145px) 110px;
+  border-bottom: 1px solid var(--line);
+}
+.page-intro__visual { position: absolute; z-index: -2; inset: 0 0 0 30%; overflow: hidden; }
+.page-intro__visual picture { display: block; width: 100%; height: 100%; }
+.page-intro__visual img { display: block; width: 100%; height: 100%; object-fit: cover; transform: translateY(var(--photo-drift, 0px)) scale(1.12); filter: saturate(.78); }
+.page-intro__shade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy-1000), rgb(0 6 31 / 72%) 25%, rgb(0 6 31 / 12%) 78%), linear-gradient(0deg, var(--navy-1000), transparent 44%, rgb(0 6 31 / 18%)); }
+.page-intro__content { position: relative; z-index: 1; width: 100%; }
+.inner-page .page-intro--photographic h1 { max-width: 860px; font-size: clamp(64px, 8.8vw, 124px); text-wrap: balance; text-shadow: 0 4px 35px rgb(0 6 31 / 30%); }
+.page-intro--photographic h1 > span, .page-intro--photographic h1 > em { display: block; }
+.page-intro--photographic h1 > em { margin-top: .09em; }
+.inner-page .page-intro--photographic .page-intro__body { max-width: 510px; color: var(--bone); text-shadow: 0 2px 12px var(--navy-1000); }
+.page-intro__caption { position: absolute; bottom: 34px; right: var(--page-gutter); display: flex; align-items: center; gap: 14px; color: var(--bone); font: 9px/1.6 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.page-intro__caption > span { height: 1px; width: 48px; background: var(--flame-orange); }
+.about-centre__photograph { position: relative; isolation: isolate; margin: 0; min-height: 430px; height: 100%; overflow: hidden; border: 1px solid rgb(244 182 63 / 28%); box-shadow: 15px 15px 0 -1px var(--navy-900), 15px 15px 0 0 rgb(244 182 63 / 18%); }
+.about-centre__photograph::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgb(244 238 230 / 24%); pointer-events: none; z-index: 2; }
+.about-centre__photograph picture { position: absolute; inset: 0; display: block; }
+.about-centre__photograph img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.7); transition: transform 1.4s cubic-bezier(.16,1,.3,1); }
+.about-centre .about-centre__stamp { position: absolute; inset: 0; min-height: 0; border: 0; transform: none; padding: 38px 24px; align-content: end; gap: 10px; background: linear-gradient(180deg, rgb(0 6 31 / 15%) 12%, rgb(0 6 31 / 28%) 40%, rgb(0 6 31 / 94%) 100%); color: var(--bone); }
+.about-centre .about-centre__stamp strong { font-family: var(--font-display); font-weight: 700; font-size: clamp(90px, 10vw, 150px); line-height: .85; letter-spacing: -.08em; color: var(--bone); }
+.about-centre__stamp .about-centre__kicker { position: absolute; top: 32px; left: 32px; padding: 7px 10px; background: rgb(0 6 31 / 75%); color: var(--amber); font-size: 8px; }
+.about-centre__stamp .about-centre__city { font-size: 12px; letter-spacing: .28em; color: var(--amber); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .about-centre__photograph:hover img { transform: scale(1.055); }
+  .inner-page :is(.pillar-card, .watch-options > a, .message-card) { transition: transform .45s cubic-bezier(.16,1,.3,1), border-color .3s, background-color .3s; }
+  .inner-page :is(.pillar-card, .watch-options > a, .message-card):hover { transform: translateY(-6px); border-color: rgb(244 182 63 / 45%); }
+  .inner-page .button svg { transition: transform .3s ease; }
+  .inner-page .button:hover svg:last-child { transform: translate(3px, -3px); }
+}
+@media (max-width: 700px) {
+  .inner-page .page-intro--photographic { min-height: 620px; align-items: end; padding-top: 230px; padding-bottom: 90px; }
+  .page-intro__visual { inset: 0; }
+  .page-intro__shade { background: linear-gradient(0deg, var(--navy-1000) 0%, rgb(0 6 31 / 94%) 20%, rgb(0 6 31 / 62%) 52%, rgb(0 6 31 / 12%) 83%, rgb(0 6 31 / 18%)); }
+  .inner-page .page-intro--photographic h1 { font-size: clamp(48px, 11.8vw, 78px); }
+  .page-intro__caption { left: var(--page-gutter); right: var(--page-gutter); bottom: 25px; font-size: 8px; }
+  .page-intro__caption > span { width: 22px; flex-shrink: 0; }
+  .about-centre__photograph { min-height: 400px; margin-right: 12px; }
+}
+@media (max-width: 350px) {
+  .inner-page .page-intro--photographic h1 { font-size: clamp(32px, 12vw, 42px); }
+  .page-intro__caption { letter-spacing: .02em; }
+  .about-centre__photograph { min-height: 340px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-intro__visual img { transform: none; }
+  .about-centre__photograph img { transition: none; }
+}

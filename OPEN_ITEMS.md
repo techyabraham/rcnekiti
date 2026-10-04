@@ -26,3 +26,7 @@ Items listed here are either missing inputs or facts published under the brief's
 - The Sunday Service remains weekly at 8:00–11:30 AM WAT; LifeClass remains draft.
 - Monthly Encounters is published as Friday 5:00 PM and Saturday 7:00 AM on the last weekend, omitting the unconfirmed Sunday close.
 - YouTube is the primary live video destination; Telegram is the supplied Ekiti audio destination. Waystream/Mixlr remain unavailable until URLs are provided.
+
+## Release verification
+
+- **Automated Lighthouse and axe results:** not recorded during implementation. Run them against the production or preview deployment, address any findings, and record the results before final accessibility/performance sign-off.
