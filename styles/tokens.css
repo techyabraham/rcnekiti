@@ -10,4 +10,8 @@
   --bone: #f4eee6;
   --muted: #a9aec9;
   --ember: linear-gradient(135deg, var(--flame-red), var(--flame-orange) 60%, var(--amber));
+  --font-size-body: 17px;
+  --font-size-label: 10px;
+  --content-width: 1340px;
+  --page-gutter: clamp(20px, 5vw, 72px);
 }

@@ -67,7 +67,16 @@ for (const [prefix, slug, title, date] of flyerNames) {
   await mkdir(output, { recursive: true });
   const base = `${slug}.webp`;
   await sharp(input).resize({ width: 1024, withoutEnlargement: true }).webp({ quality: 76, effort: 6 }).toFile(path.join(output, base));
-  manifest.push({ source: file, output: `/flyers/${base}`, title, date, alt: `Flyer: ${title}${date ? `, ${date}` : ""}`, status: "published" });
+  const thumbBase = slug + "-thumb.webp";
+  let quality = 48;
+  let thumb = await sharp(input).resize({ width: 480, withoutEnlargement: true }).webp({ quality, effort: 6 }).toBuffer();
+  while (thumb.length > 40 * 1024 && quality > 28) {
+    quality -= 4;
+    thumb = await sharp(input).resize({ width: 480, withoutEnlargement: true }).webp({ quality, effort: 6 }).toBuffer();
+  }
+  if (thumb.length > 40 * 1024) throw new Error("Poster thumbnail exceeded 40KB: " + slug);
+ await writeFile(path.join(output, thumbBase), thumb);
+  manifest.push({ source: file, output: `/flyers/${base}`, thumbnail: `/flyers/${thumbBase}`, thumbnailBytes: thumb.length, title, date, alt: `Flyer: ${title}${date ? `, ${date}` : ""}`, status: "published" });
 }
 await writeFile(path.join(publicDir, "flyers.manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(`Optimized ${candidates.length} photos and ${manifest.length} flyers.`);

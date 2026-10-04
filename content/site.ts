@@ -30,6 +30,28 @@ export const site = {
     mixlr: null as string | null,
     ekitiInstagram: null as string | null,
   },
+  pages: {
+    home: "/",
+    about: "/about/",
+    gatherings: "/gatherings/",
+    messages: "/messages/",
+    visit: "/visit/",
+    give: "/give/",
+    watchLive: "/watch-live/",
+    gatheringsArchive: "/gatherings/",
+  },
+  anchors: { fiveAnswers: "/#five-answers", posterWall: "/#poster-wall", messages: "/#messages" },
+  assets: {
+    logoDark: "/brand/logo-dark-bg.webp",
+    heroPhoto: "/photos/rcnekiti-hero-image",
+    epac26Teaching: "/photos/829735486_1138139442206766_5013005523647939209_n",
+    epac26Recap: [
+      { src: "/photos/829735486_1138139442206766_5013005523647939209_n", alt: "A minister teaching with a microphone on Day 1 of EPAC'26", widths: [480, 768, 1280, 1920] },
+      { src: "/photos/829836919_1138141282206582_7763966123917588285_n", alt: "A woman listening during EPAC'26", widths: [480, 768, 1280] },
+      { src: "/photos/830342956_1138140125540031_5219339381914869045_n", alt: "A man in prayer during EPAC'26", widths: [480, 768, 1280, 1920] },
+      { src: "/photos/831533238_1138142002206510_2021870020264775082_n", alt: "A minister teaching with a microphone on Day 1 of EPAC'26", widths: [480, 768, 1280, 1920] },
+    ],
+  },
   messages: {
     visit: "Hello RCN Ekiti, I'd like to plan a visit.",
     prayer: "Hello RCN Ekiti, I'd like prayer for…",
@@ -42,4 +64,8 @@ export const site = {
 
 export function whatsappUrl(message: string): string {
   return `${site.links.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export function mapSearchUrl() {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapSearch)}`;
 }
