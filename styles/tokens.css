@@ -1,0 +1,13 @@
+:root {
+  color-scheme: dark;
+  --navy-1000: #00061f;
+  --navy-900: #000a32;
+  --navy-700: #101a5a;
+  --line: rgb(244 238 230 / 12%);
+  --flame-red: #d8120c;
+  --flame-orange: #ee5a03;
+  --amber: #f4b63f;
+  --bone: #f4eee6;
+  --muted: #a9aec9;
+  --ember: linear-gradient(135deg, var(--flame-red), var(--flame-orange) 60%, var(--amber));
+}
