@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/metadata";
 import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/pages/PageIntro";
 import { Img } from "@/components/ui/Img";
@@ -7,7 +8,7 @@ import { copy } from "@/content/copy";
 import { leader } from "@/content/leader";
 import { site } from "@/content/site";
 
-export const metadata: Metadata = { title: "About RCN Ekiti", description: "Learn about Remnant Christian Network, Ekiti and meet resident pastor Dr. Taiwo Omolayo." };
+export const metadata: Metadata = pageMetadata("About RCN Ekiti", "Learn about Remnant Christian Network, Ekiti and meet resident pastor Dr. Taiwo Omolayo.", "/about/");
 
 export default function AboutPage() {
   return <main id="main-content" className="inner-page about-page">

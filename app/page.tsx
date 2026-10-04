@@ -15,6 +15,10 @@ import { messages } from "@/content/messages";
 import { nextOccurrences, formatOccurrenceDate } from "@/content/occurrences";
 import { schedule } from "@/content/schedule";
 import { mapSearchUrl, site, whatsappUrl } from "@/content/site";
+import { pageMetadata } from "@/content/metadata";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata("Closer than you think | RCN Ekiti", site.metadataDescriptions.home, "/");
 
 export default function Home() {
   const now = new Date();

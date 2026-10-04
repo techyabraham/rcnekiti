@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/metadata";
 import { ArrowUpRight, Headphones, Radio } from "lucide-react";
 import { NextGatheringCountdown } from "@/components/pages/NextGatheringCountdown";
 import { PageIntro } from "@/components/pages/PageIntro";
@@ -7,7 +8,7 @@ import { liveOccurrence, nextOccurrences } from "@/content/occurrences";
 import { schedule } from "@/content/schedule";
 import { site } from "@/content/site";
 
-export const metadata: Metadata = { title: "Watch & Listen | RCN Ekiti", description: "Watch RCN Ekiti's main stream on YouTube and find audio messages on Telegram." };
+export const metadata: Metadata = pageMetadata("Watch & Listen | RCN Ekiti", "Watch RCN Ekiti's main stream on YouTube and find audio messages on Telegram.", "/watch-live/");
 
 export default function WatchLivePage() {
   const now = new Date();

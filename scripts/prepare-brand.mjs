@@ -23,7 +23,7 @@ for (let i = 0; i < data.length; i += info.channels) {
 const light = sharp(source).trim({ background: { r: 255, g: 255, b: 255, alpha: 0 }, threshold: 10 });
 await Promise.all([
   sharp(data, { raw: info }).png().toFile(path.join(output, "logo-dark-bg.png")),
-  sharp(data, { raw: info }).webp({ quality: 90, alphaQuality: 100 }).toFile(path.join(output, "logo-dark-bg.webp")),
+  sharp(data, { raw: info }).resize({ width: 440, withoutEnlargement: true }).webp({ quality: 86, alphaQuality: 90, effort: 6 }).toFile(path.join(output, "logo-dark-bg.webp")),
   light.png().toFile(path.join(output, "logo-light-bg.png")),
 ]);
 

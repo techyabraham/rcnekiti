@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { LazyMotion } from "motion/react";
+import { span as MotionSpan, em as MotionEm } from "motion/react-m";
 import { ArrowDown, ArrowUpRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Img } from "@/components/ui/Img";
@@ -11,6 +12,7 @@ import { site, whatsappUrl } from "@/content/site";
 import { readMotionEnvironment, shouldEnableMotion } from "./motion-preferences";
 
 const EmberParticles = dynamic(() => import("./EmberParticles"), { ssr: false });
+const loadMotionFeatures = () => import("./motion-features").then((module) => module.default);
 
 export function HomeHero() {
   const [fullMotion, setFullMotion] = useState(false);
@@ -28,7 +30,7 @@ export function HomeHero() {
       </div>
       <div className="home-hero__copy">
         <div className="hero-kicker"><span className="hero-kicker__line" /> A COMMUNITY FOR THE HUNGRY</div>
-        <h1 id="home-title">{fullMotion ? <><motion.span className="hero-line" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }}>Closer than</motion.span><motion.em className="hero-line" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6, delay: .1 }}>you think.</motion.em></> : <>Closer than<br /><em>you think.</em></>}</h1>
+        <h1 id="home-title">{fullMotion ? <LazyMotion features={loadMotionFeatures}><MotionSpan className="hero-line" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }}>Closer than</MotionSpan><MotionEm className="hero-line" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6, delay: .1 }}>you think.</MotionEm></LazyMotion> : <>Closer than<br /><em>you think.</em></>}</h1>
         <p className="home-hero__lead">{copy.heroSubline}</p>
         <div className="hero-actions">
           <Button href={whatsappUrl(site.messages.visit)}>Plan your visit <ArrowUpRight size={17} aria-hidden="true" /></Button>

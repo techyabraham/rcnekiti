@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/metadata";
 import { ArrowUpRight, Clock3, MapPin, Phone, Users } from "lucide-react";
 import { PageIntro } from "@/components/pages/PageIntro";
 import { Button } from "@/components/ui/Button";
 import { PendingCard } from "@/components/ui/PendingCard";
 import { mapSearchUrl, site, whatsappUrl } from "@/content/site";
 
-export const metadata: Metadata = { title: "Plan a Visit | RCN Ekiti", description: "Find the RCN Prayer Tent in Ado-Ekiti and learn what to expect on your first visit." };
+export const metadata: Metadata = pageMetadata("Plan a Visit | RCN Ekiti", "Find the RCN Prayer Tent in Ado-Ekiti and learn what to expect on your first visit.", "/visit/");
 
 const visitorDetails = [
   { question: "How long are the gatherings?", answer: "Sunday Service is about three and a half hours, from 8:00 to 11:30 AM WAT. Friday Prayer is about three hours, from 5:00 to 8:00 PM WAT. Monthly Encounters take place over several sessions." },

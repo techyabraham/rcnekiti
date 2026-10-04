@@ -4,6 +4,12 @@ export const site = {
   tagline: "Building Disciples, Impacting Nations.",
   relationship: "An apostolic extension of RCN Global, the network of Apostle Arome Osayi.",
   address: "RCN Prayer Tent, Second Floor, Olaoluwa House, between Staleg Mall and Energy Filling Station, Adebayo Street, Ado-Ekiti, Ekiti State, Nigeria",
+  addressParts: {
+    streetAddress: "Second Floor, Olaoluwa House, between Staleg Mall and Energy Filling Station, Adebayo Street",
+    addressLocality: "Ado-Ekiti",
+    addressRegion: "Ekiti State",
+    addressCountry: "NG",
+  },
   venueName: "RCN Prayer Tent",
   directions: [
     "A prominent multi-storey commercial building with shops and offices at ground level.",
@@ -39,6 +45,9 @@ export const site = {
     give: "/give/",
     watchLive: "/watch-live/",
     gatheringsArchive: "/gatherings/",
+  },
+  metadataDescriptions: {
+    home: "Remnant Christian Network, Ekiti — an apostolic extension of RCN Global in Ado-Ekiti. Join us for prayer, the Word and fellowship.",
   },
   anchors: { fiveAnswers: "/#five-answers", posterWall: "/#poster-wall", messages: "/#messages" },
   assets: {
